@@ -1,5 +1,7 @@
 # Next Auth Hasura Adapter
 
+This probably doesn't work. I didn't try it.
+
 ## Migration
 
 ```sql
