@@ -1,7 +1,17 @@
 import type { Adapter } from "next-auth/adapters";
-import { adminSdk } from "./api";
+import { getAdminSDK } from "./api";
 
-export function HasuraAdapter(): Adapter {
+export function HasuraAdapter({
+  endpoint,
+  adminSecret,
+}: {
+  endpoint: string;
+  adminSecret: string;
+}): Adapter {
+  const adminSdk = getAdminSDK({
+    endpoint,
+    adminSecret,
+  });
   return {
     createUser: async (data) => {
       console.log(data);
